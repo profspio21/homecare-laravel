@@ -31,10 +31,10 @@ class DataChangeEmailNotification extends Notification
         return (new MailMessage())
             ->subject(config('app.name') . ': entry ' . $this->data['action'] . ' in ' . $this->data['model_name'])
             ->greeting('Hi,')
-            ->line('we would like to inform you that entry has been ' . $this->data['action'] . ' in ' . $this->data['model_name'])
-            ->line('Please log in to see more information.')
+            ->line('Kami mengonfirmasikan kepada anda bahwa entri baru telah ' . $this->data['action'] . ' in ' . $this->data['model_name'])
+            ->line('Silahkan login untuk melihat informasinya.')
             ->action(config('app.name'), config('app.url'))
-            ->line('Thank you')
+            ->line('Terimakasih')
             ->line(config('app.name') . ' Team')
             ->salutation(' ');
     }

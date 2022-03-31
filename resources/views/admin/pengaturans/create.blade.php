@@ -20,6 +20,16 @@
                 <span class="help-block">{{ trans('cruds.pengaturan.fields.key_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="title">{{ trans('cruds.pengaturan.fields.title') }}</label>
+                <textarea class="form-control ckeditor {{ $errors->has('title') ? 'is-invalid' : '' }}" name="title" id="title">{!! old('title') !!}</textarea>
+                @if($errors->has('title'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('title') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.pengaturan.fields.value_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="value">{{ trans('cruds.pengaturan.fields.value') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('value') ? 'is-invalid' : '' }}" name="value" id="value">{!! old('value') !!}</textarea>
                 @if($errors->has('value'))

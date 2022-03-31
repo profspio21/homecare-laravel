@@ -71,33 +71,83 @@
 
 <section id="isi5">
     <div class="isi5-container">
-        <div class="row">
+        <div class="row mleft">
             <div class="col-lg-3 pad20 rukun-options">
-                <div class="">
-                    <h2>Rukun Options</h2>
+                <div class="row ">
+                    <div class="list-options">
+                        <h2>Rukun Options</h2>
+                        <a href="">Senior Resort</a>
+                        <hr>
+                        <a href="">Senior Care</a>
+                        <hr>
+                        <a href="">Senior Club</a>
+                        <hr>
+                        <a href="">Damentia Day Program</a>
+                    </div>
+                </div>
+                <div class="row isi-title">
+                    @if (!empty($pengaturantitle['pertanyaan_terkait_homecare']))
+                        {!!$pengaturantitle['pertanyaan_terkait_homecare']!!}
+                    @endif
+                    @if (!empty($pengaturanisi['pertanyaan_terkait_homecare']))
+                        {!!$pengaturanisi['pertanyaan_terkait_homecare']!!}
+                    @endif
+                    <div class="hubungi">
+                        <a href="tel:+6285888076790" style="font-weight: 600">Hubungi Kami</a>
+                    </div>
+                    
+                </div>
+                    <hr style="margin-bottom: 40px">
+            </div>
+            <div class="col-lg-4 pad20">
+                <div class="row">
+                    <div class="section-header">
+                        @if(!empty($pengaturantitle['how_homecare_works']))
+                        {!!$pengaturantitle['how_homecare_works']!!}
+                        @endif
+                    </div>
+                    <div class="isi-title">
+                        @if(!empty($pengaturanisi['how_homecare_works']))
+                        {!!$pengaturanisi['how_homecare_works']!!}
+                        @endif
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section-header">
+                        @if(!empty($pengaturantitle['service_area']))
+                        <h2>{!!$pengaturantitle['service_area']!!}</h2>
+                        @endif
+                    </div>
+                    <div class="isi-title">
+                        @if(!empty($pengaturanisi['service_area']))
+                        {!!$pengaturanisi['service_area']!!}
+                        @endif
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 pad20">
                 <div class="row">
                     <div class="section-header">
-                        <h2>How Home Care works</h2>
+                        @if (!empty($pengaturantitle['pelayanan_yang_tersedia']))
+                        <h2>{!!$pengaturantitle['pelayanan_yang_tersedia']!!}</h2>
+                        @endif
+                    </div>
+                    <div class="isi-title">
+                        @if (!empty($pengaturanisi['pelayanan_yang_tersedia']))
+                        {!!$pengaturanisi['pelayanan_yang_tersedia']!!}
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <div class="section-header">
-                        <h2>Service Area</h2>
+                        @if (!empty($pengaturantitle['our_staff']))
+                        <h2>{!!$pengaturantitle['our_staff']!!}</h2>
+                        @endif
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 pad20">
-                <div class="row">
-                    <div class="section-header">
-                        <h2>Pelayanan yang tersedia :</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="section-header">
-                        <h2>Our Staff</h2>
+                    <div class="isi-title">
+                        @if (!empty($pengaturanisi['our_staff']))
+                        {!!$pengaturanisi['our_staff']!!}
+                        @endif
                     </div>
                 </div>
             </div>

@@ -33,6 +33,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.pengaturan.fields.title') }}
+                        </th>
+                        <td>
+                            {{ $pengaturan->title }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.pengaturan.fields.value') }}
                         </th>
                         <td>

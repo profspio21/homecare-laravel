@@ -46,13 +46,14 @@
 
   {{-- @yield('sidebar') --}}
 
-  {{-- @include('partials.footer') --}}
+  @include('partials.footer')
 
-  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  <a href="#header" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->
   <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
+  <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
   
   {{-- <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('lib/easing/easing.min.js') }}"></script>

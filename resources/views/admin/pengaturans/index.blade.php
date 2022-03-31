@@ -11,7 +11,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.pengaturan.title_singular') }} {{ trans('global.list') }}
+        {{ trans('global.list') }} {{ trans('cruds.pengaturan.title_singular') }} 
     </div>
 
     <div class="card-body">
@@ -22,11 +22,12 @@
                         <th width="10">
 
                         </th>
+                        
                         <th>
-                            {{ trans('cruds.pengaturan.fields.id') }}
+                            {{ trans('cruds.pengaturan.fields.title') }}
                         </th>
                         <th>
-                            {{ trans('cruds.pengaturan.fields.key') }}
+                            {{ trans('cruds.pengaturan.fields.value') }}
                         </th>
                         <th>
                             &nbsp;
@@ -38,6 +39,7 @@
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
+                        
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
@@ -51,11 +53,12 @@
                             <td>
 
                             </td>
+                            
                             <td>
-                                {{ $pengaturan->id ?? '' }}
+                                {!! $pengaturan->title ?? '' !!}
                             </td>
                             <td>
-                                {{ $pengaturan->key ?? '' }}
+                                {!! $pengaturan->value ?? '' !!}
                             </td>
                             <td>
                                 @can('pengaturan_show')

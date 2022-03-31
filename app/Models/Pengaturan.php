@@ -26,6 +26,7 @@ class Pengaturan extends Model implements HasMedia
 
     protected $fillable = [
         'key',
+        'title',
         'value',
         'created_at',
         'updated_at',
