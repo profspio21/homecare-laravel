@@ -21,6 +21,9 @@ Route::get('/home', function () {
 
     return redirect()->route('admin.home');
 });
+// Career
+Route::get('career', 'CareerController@index')->name('career');
+Route::post('career', 'CareerController@store');
 
 Auth::routes(['register' => false]);
 
@@ -37,6 +40,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Users
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
+
+    // Career
+    
 
     // Pengaturan
     Route::delete('pengaturans/destroy', 'PengaturanController@massDestroy')->name('pengaturans.massDestroy');

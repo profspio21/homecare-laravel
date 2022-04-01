@@ -13,7 +13,7 @@
             <li><a href="#3">Service</a></li>
             <li><a href="#4">Contact</a></li>
             <li><a href="#5">Partner</a></li>
-            <li><a href="#5">Career</a></li>
+            <li><a href="career">Career</a></li>
           </ul>
         </nav>
     </div>

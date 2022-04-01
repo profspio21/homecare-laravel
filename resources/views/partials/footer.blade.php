@@ -1,7 +1,7 @@
 <footer id="footer">
     <div class="container">
         <div class="row" style="padding-top:30px;">
-            <div class="col-lg-4">
+            <div class="col-lg-4x">
                 <div class="row"><h3>Email</h3></div>
                 <div class="row">
                     @if (!empty($pengaturanisi['email']))
@@ -9,7 +9,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4x">
                 <div class="row">
                     <h3>Call</h3>
                 </div>
@@ -19,7 +19,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4x">
                 <div class="row">
                     <h3>Address</h3>
                 </div>

@@ -708,6 +708,11 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-weight: 300;
     letter-spacing: 0px;
   }
+  .col-lg-4x {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -788,7 +793,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 @media (min-width: 1100px) {
   .container {
-    padding: 0 160px;
+    padding-left: 160px;
+    padding-right: 160px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -814,7 +820,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 1099px) {
   .pad20 {
-    padding: 0px 20px;
+    padding: 0px 18px;
   }
   .pad10 {
     padding: 0px 10px;
@@ -846,5 +852,11 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding: 0px;
     margin-right: auto;
     margin-left: auto;
+  }
+}
+
+@media (min-width:640px) {
+  .rounded-form {
+    padding-top: 120px
   }
 }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>RUKUN HOME CARE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="Pio Tirta">
@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
+  {{-- <link href="https://unpkg.com/@coreui/coreui@3.2/dist/css/coreui.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" /> --}}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
 
   <!-- Bootstrap CSS File -->
   {{-- <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
@@ -30,6 +33,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/ft-form-styles-v3.css') }}" rel="stylesheet">
   {{-- <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script> --}}
 
   @yield('head')
@@ -54,6 +58,7 @@
   <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
   <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
   
   {{-- <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
