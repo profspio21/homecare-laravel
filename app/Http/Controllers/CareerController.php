@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Career;
 use App\Models\Job;
 use App\Models\Gender;
+use App\Models\Pengaturan;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCareerRequest;
 use App\Http\Requests\UpdateCareerRequest;
@@ -18,11 +19,13 @@ class CareerController extends Controller
 
     public function index()
     {
+        $pengaturantitle = Pengaturan::pluck('title','key');
+        $pengaturanisi = Pengaturan::pluck('value','key');
         $genders = Gender::all();
-
         $jobs = Job::all();
+        $careers = Career::all();
 
-        return view('frontend.career', compact('jobs','genders'));
+        return view('frontend.career', compact('careers','jobs','genders','pengaturantitle','pengaturanisi'));
     }
 
     public function store(StoreCareerRequest $request)
@@ -36,6 +39,6 @@ class CareerController extends Controller
             $career->addMedia(storage_path('tmp/uploads/' . $request->input('cv')))->toMediaCollection('cv');
         }
 
-        return redirect()->route('frontend.beranda');
+        return redirect()->route('home');
     }
 }

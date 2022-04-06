@@ -29,9 +29,9 @@ class DataChangeEmailNotification extends Notification
     public function getMessage()
     {
         return (new MailMessage())
-            ->subject(config('app.name') . ': entry ' . $this->data['action'] . ' in ' . $this->data['model_name'])
+            ->subject(config('app.name') . ': Entry ' . $this->data['action'] . ' in ' . $this->data['model_name'])
             ->greeting('Hi,')
-            ->line('Kami mengonfirmasikan kepada anda bahwa entri baru telah ' . $this->data['action'] . ' in ' . $this->data['model_name'])
+            ->line('Kami mengonfirmasikan kepada anda bahwa entri baru telah dibuat di ' . $this->data['model_name'])
             ->line('Silahkan login untuk melihat informasinya.')
             ->action(config('app.name'), config('app.url'))
             ->line('Terimakasih')

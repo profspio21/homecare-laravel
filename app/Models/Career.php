@@ -52,6 +52,34 @@ class Career extends Model implements HasMedia
         return $this->belongsTo(Job::class, 'job_id');
     }
 
+    // public function registerMediaConversions(Media $media = null): void
+    // {
+    //     $this->addMediaConversion('thumb')->fit('crop', 50, 50);
+    //     $this->addMediaConversion('preview')->fit('crop', 120, 120);
+    // }
+
+    public function getCvAttribute()
+    {
+        $file = $this->getMedia('cv')->first();
+
+        if ($file) {
+            $file->url       = $file->getUrl();
+        }
+
+        return $file;
+    }
+    
+    public function getLamaranAttribute()
+    {
+        $file = $this->getMedia('lamaran')->first();
+
+        if ($file) {
+            $file->url       = $file->getUrl();
+        }
+
+        return $file;
+    }
+
     public static function boot()
     {
         parent::boot();
@@ -63,9 +91,4 @@ class Career extends Model implements HasMedia
     //     $this->addMediaConversion('thumb')->fit('crop', 50, 50);
     //     $this->addMediaConversion('preview')->fit('crop', 120, 120);
     // }
-
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
 }

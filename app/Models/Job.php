@@ -13,11 +13,16 @@ class Job extends Model
 
     protected $dates = [
         'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     protected $fillable = [
         'name',
+        'description',
         'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     public function career()

@@ -2,17 +2,38 @@
 
 @section('content')
     <div class="container">
-        <div class="rounded-form" style="padding-bottom: 6rem;">
+        <div class="rounded-form" style="padding-bottom: 4rem;">
+          <img src="../img/banner3.jpg" alt="Rukun Home Care" width="100%">
+          <div class="job-list">
+            
+              <h2>Job Available</h2>
+            
+            @foreach ($jobs as $job)
+            <div class="card-job">
+              <div class="card-head">
+                @if (!empty($job->name))
+                  {!!$job->name!!}
+                @endif
+              </div>
+              <div class="card-isi">
+                @if (!empty($job->description))
+                  {!!$job->description!!}
+                @endif
+              </div>
+            </div>
+            @endforeach
+          </div>
             <form action="career" id="ft-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+                @csrf
                 <fieldset>
                   <legend>Join Us</legend>
                   <label>
                     Pekerjaan yang dilamar *
                     
-                    <select name="Application for" required>
+                    <select name="job" required>
                        <option value="" disabled selected>Silahkan pilih</option>
                         @foreach ($jobs as $job)
-                        <option value="{{$job->name}}">{{$job->name}}</option>
+                        <option value="{!!$job->name!!}">{!!$job->name!!}</option>
                         @endforeach
                     </select>    
                     
@@ -21,12 +42,17 @@
                 </fieldset>
                 <fieldset>
                   <legend>Data Pribadi</legend>
-                  
+                  <div class="two-cols">
                     <label>
                       Nama
                       <input type="text" name="nama" required>
                     </label>
-                  
+                    <label>
+                      Tanggal lahir
+                      <input type="date" name="ttl" required>
+                    </label>
+                  </div>
+                                      
                   <div class="two-cols">
                     <label>
                       Jenis Kelamin
@@ -39,21 +65,21 @@
                     </label>
                     <label>
                       Agama
-                      <input type="text" name="agama">
+                      <input type="text" name="agama" required>
                     </label>
                   </div>
                   <label>
                     Alamat
-                    <input type="text" name="alamat">
+                    <input type="text" name="alamat" required>
                   </label>
                   <div class="two-cols">
                     <label>
                       Tinggi badan
-                      <input type="text" name="tinggi">
+                      <input type="text" name="tinggi" required>
                     </label>
                     <label>
                       Berat badan
-                      <input type="text" name="berat">
+                      <input type="text" name="berat" required>
                     </label>
                   </div>
                   <div class="two-cols">
@@ -68,16 +94,19 @@
                   </div>
                 </fieldset>
                 <fieldset>
-                  <legend>Dokumen lamaran</legend>
-                  <input type="hidden" name="MAX_FILE_SIZE" value="10485760">
+                  <legend>Dokumen</legend>
                   <div class="two-cols">
                     <label>
                       Surat Lamaran
-                      <input type="file" name="lamaran" accept=".doc,.docx,.pdf">
+                      <div class="needsclick dropzone" id="lamaran-dropzone" style="border: 1px solid">
+
+                      </div>                    
                     </label>
                     <label>
                       CV
-                      <input type="file" name="CV" accept=".doc,.docx,.pdf">
+                      <div class="needsclick dropzone" id="cv-dropzone" style="border: 1px solid">
+
+                      </div>
                     </label>
                   </div>
                   <p>Masukkan Surat lamaran dan CV dalam bentuk pdf. Maksimum 5 MB.</p>
@@ -90,3 +119,106 @@
         </div>
     </div>
 @endsection
+
+
+@section('scripts')
+
+<script>
+  Dropzone.options.cvDropzone = {
+  url: '{{ route('career.storeMedia') }}',
+  maxFilesize: 10, // MB
+  acceptedFiles: '.doc,.docx,.pdf',
+  maxFiles: 1,
+  addRemoveLinks: true,
+  headers: {
+    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+  },
+  success: function (file, response) {
+    $('form').find('input[name="cv"]').remove()
+    $('form').append('<input type="hidden" name="cv" value="' + response.name + '">')
+  },
+  removedfile: function (file) {
+    file.previewElement.remove()
+    if (file.status !== 'error') {
+      $('form').find('input[name="cv"]').remove()
+      this.options.maxFiles = this.options.maxFiles + 1
+    }
+  },
+  init: function () {
+@if(isset($career) && $career->cv)
+    var file = {!! json_encode($career->cv) !!}
+        this.options.addedfile.call(this, file)
+    // this.options.thumbnail.call(this, file, file.url)
+    file.previewElement.classList.add('dz-complete')
+    $('form').append('<input type="hidden" name="cv" value="' + file.file_name + '">')
+    this.options.maxFiles = this.options.maxFiles - 1
+@endif
+  },
+  error: function (file, response) {
+      if ($.type(response) === 'string') {
+          var message = response //dropzone sends it's own error messages in string
+      } else {
+          var message = response.errors.file
+      }
+      file.previewElement.classList.add('dz-error')
+      _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+      _results = []
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          node = _ref[_i]
+          _results.push(node.textContent = message)
+      }
+
+      return _results
+  }
+}
+</script>
+<script>
+  Dropzone.options.lamaranDropzone = {
+  url: '{{ route('career.storeMedia') }}',
+  maxFilesize: 10, // MB
+  acceptedFiles: '.doc,.docx,.pdf',
+  maxFiles: 1,
+  addRemoveLinks: true,
+  headers: {
+    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+  },
+  success: function (file, response) {
+    $('form').find('input[name="lamaran"]').remove()
+    $('form').append('<input type="hidden" name="lamaran" value="' + response.name + '">')
+  },
+  removedfile: function (file) {
+    file.previewElement.remove()
+    if (file.status !== 'error') {
+      $('form').find('input[name="lamaran"]').remove()
+      this.options.maxFiles = this.options.maxFiles + 1
+    }
+  },
+  init: function () {
+@if(isset($career) && $career->lamaran)
+    var file = {!! json_encode($career->lamaran) !!}
+        this.options.addedfile.call(this, file)
+    // this.options.thumbnail.call(this, file, file.url)
+    file.previewElement.classList.add('dz-complete')
+    $('form').append('<input type="hidden" name="lamaran" value="' + file.file_name + '">')
+    this.options.maxFiles = this.options.maxFiles - 1
+@endif
+  },
+  error: function (file, response) {
+      if ($.type(response) === 'string') {
+          var message = response //dropzone sends it's own error messages in string
+      } else {
+          var message = response.errors.file
+      }
+      file.previewElement.classList.add('dz-error')
+      _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+      _results = []
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          node = _ref[_i]
+          _results.push(node.textContent = message)
+      }
+
+      return _results
+  }
+}
+</script>
+@stop

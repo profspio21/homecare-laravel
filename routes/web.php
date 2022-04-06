@@ -24,6 +24,7 @@ Route::get('/home', function () {
 // Career
 Route::get('career', 'CareerController@index')->name('career');
 Route::post('career', 'CareerController@store');
+Route::post('career/media', 'CareerController@storeMedia')->name('career.storeMedia');
 
 Auth::routes(['register' => false]);
 
@@ -42,7 +43,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('users', 'UsersController');
 
     // Career
-    
+    Route::resource('careers', 'CareersController');
+    Route::post('careers/media', 'CareersController@storeMedia')->name('careers.storeMedia');
+
+    // Job
+    Route::delete('jobs/destroy', 'JobsController@massDestroy')->name('jobs.massDestroy');
+    Route::post('jobs/media', 'JobsController@storeMedia')->name('jobs.storeMedia');
+    Route::post('jobs/ckmedia', 'JobsController@storeCKEditorImages')->name('jobs.storeCKEditorImages');
+    Route::resource('jobs', 'JobsController');
 
     // Pengaturan
     Route::delete('pengaturans/destroy', 'PengaturanController@massDestroy')->name('pengaturans.massDestroy');

@@ -4,8 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Career;
+use App\Models\Gender;
+use App\Models\Job;
 use App\Http\Requests\StoreCareerRequest;
 use App\Http\Requests\UpdateCareerRequest;
+use Illuminate\Http\Request;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Symfony\Component\HttpFoundation\Response;
+use App\Http\Controllers\Traits\MediaUploadingTrait;
+
 
 class CareersController extends Controller
 {
@@ -14,9 +21,31 @@ class CareersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    use MediaUploadingTrait;
+
     public function index()
     {
-        //
+
+        $careers = Career::all();
+        $genders = Gender::all();
+
+        $jobs = Job::all();
+
+        return view('admin.careers.index', compact('careers','jobs','genders'));
+    }
+
+    public function store(StoreCareerRequest $request)
+    {
+        $career = Career::create($request->all());
+
+        if ($request->input('lamaran', false)) {
+            $career->addMedia(storage_path('tmp/uploads/' . $request->input('lamaran')))->toMediaCollection('lamaran');
+        }
+        if ($request->input('cv', false)) {
+            $career->addMedia(storage_path('tmp/uploads/' . $request->input('cv')))->toMediaCollection('cv');
+        }
+
+        return redirect()->route('frontend.beranda');
     }
 
     /**
@@ -29,16 +58,6 @@ class CareersController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreCareerRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreCareerRequest $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -49,6 +68,7 @@ class CareersController extends Controller
     public function show(Career $career)
     {
         //
+        return view('admin.careers.show', compact('career'));
     }
 
     /**

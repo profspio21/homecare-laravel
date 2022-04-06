@@ -10,12 +10,22 @@
         <li class="c-sidebar-nav-item">
             <a href="{{ route("admin.home") }}" class="c-sidebar-nav-link">
                 <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
-
                 </i>
                 {{ trans('global.dashboard') }}
             </a>
         </li>
-        @can('user_management_access')
+        @can('user_access')
+        <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.users.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "c-active" : "" }}">
+                <i class="fa-fw fas fa-user c-sidebar-nav-icon">
+
+                </i>
+                {{ trans('cruds.user.title') }}
+            </a>
+        </li>
+        @endcan
+        
+        {{-- @can('user_management_access')
             <li class="c-sidebar-nav-dropdown {{ request()->is("admin/permissions*") ? "c-show" : "" }} {{ request()->is("admin/roles*") ? "c-show" : "" }} {{ request()->is("admin/users*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
                     <i class="fa-fw fas fa-users c-sidebar-nav-icon">
@@ -56,7 +66,7 @@
                     @endcan
                 </ul>
             </li>
-        @endcan
+        @endcan --}}
         @can('pengaturan_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.pengaturans.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/pengaturans") || request()->is("admin/pengaturans/*") ? "c-active" : "" }}">
@@ -64,6 +74,26 @@
 
                     </i>
                     {{ trans('cruds.pengaturan.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('job_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.jobs.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/jobs") || request()->is("admin/jobs/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-tasks c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.job.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('career_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.careers.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/careers") || request()->is("admin/careers/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-send c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.career.title') }}
                 </a>
             </li>
         @endcan
