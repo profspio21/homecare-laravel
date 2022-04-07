@@ -23,11 +23,14 @@
   {{-- <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
 
   <!-- Libraries CSS Files -->
-  
-  {{-- <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
   <link href="{{ asset('lib/venobox/venobox.css') }}" rel="stylesheet">
   <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">	 --}}				
+  
+  
+  {{-- <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+  	 --}}				
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -59,15 +62,15 @@
   <script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
   <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-  
-  {{-- <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
   <script src="{{ asset('lib/superfish/hoverIntent.js') }}"></script>
   <script src="{{ asset('lib/superfish/superfish.min.js') }}"></script>
   <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
   <script src="{{ asset('lib/venobox/venobox.min.js') }}"></script>
   <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script> --}}
+  
+  {{-- <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
+  > --}}
 
   <!-- Template Main Javascript File -->
   <script src="{{ asset('js/app.js') }}"></script>

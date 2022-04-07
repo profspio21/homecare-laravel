@@ -14,6 +14,7 @@
                 @if (!empty($job->name))
                   {!!$job->name!!}
                 @endif
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
               </div>
               <div class="card-isi">
                 @if (!empty($job->description))
@@ -36,7 +37,6 @@
                         <option value="{!!$job->name!!}">{!!$job->name!!}</option>
                         @endforeach
                     </select>    
-                    
                     
                   </label>
                 </fieldset>
@@ -122,7 +122,6 @@
 
 
 @section('scripts')
-
 <script>
   Dropzone.options.cvDropzone = {
   url: '{{ route('career.storeMedia') }}',
