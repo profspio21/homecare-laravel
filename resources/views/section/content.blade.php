@@ -3,14 +3,15 @@
         <div class="jasa">
             <img src="../img/icon.png" alt="Rukun Home Care">
             <div class="row1">
-                <h1>Jasa perawatan dan pendampingan orang tua di rumah</h1>
+                @if(!empty($pengaturantitle['sec1']))
+                {!!$pengaturantitle['sec1']!!}
+                @endif
             </div>
             <img src="../img/line.png" alt="">
             <div class="row2">
-                <p>
-                    RUKUN Home Care hadir sebagai pilihan terbaik untuk pelayanan perawatan di rumah yang profesional.<br>
-                    Sebagai divisi dari RUKUN Senior Living, kami berpengalaman melayani dan memberikan kenyamanan hidup bagi warga senior sejak 2011.
-                </p>
+                @if(!empty($pengaturanisi['sec1']))
+                {!!$pengaturanisi['sec1']!!}
+                @endif
             </div>
         </div>
     </div>
@@ -21,20 +22,23 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="section-header">
-                    <h2>Why choose us</h2>
+                    @if(!empty($pengaturantitle['sec2']))
+                    {!!$pengaturantitle['sec2']!!}
+                    @endif
                 </div>
-                <p>Dengan pengalaman di bidang Senior Living, tenaga perawat dan caregiver kami sudah terlatih dan trampil dalam melayani warga senior. 
-                    Selain itu, staff yang bertugas didukung oleh Care Coordinator dan staff medis lainnya untuk menjaga kwalitas pelayanan yang diberikan.
-                </p>
+                @if(!empty($pengaturanisi['sec2']))
+                    {!!$pengaturanisi['sec2']!!}
+                @endif
             </div>
             <div class="col-lg-6">
                 <div class="section-header">
-                    <h2>What we do</h2>
+                    @if(!empty($pengaturantitle['sec3']))
+                    {!!$pengaturantitle['sec3']!!}
+                    @endif
                 </div>
-                <p>
-                    Kami melayani warga senior yang perlu ditemani, memerlukan asistensi dengan kebutuhan hidup sehari-hari, atau memerlukan perawatan di rumah saat tidak lagi di rumah sakit. 
-                    Pelayanan kami bertujuan untuk meningkatkan atau mempertahankan kondisi kesehatan, maupun memaksimalkan tingkat kemandirian dan kesejahteraan klien.
-                </p>
+                @if(!empty($pengaturanisi['sec3']))
+                    {!!$pengaturanisi['sec3']!!}
+                @endif
             </div>
         </div>
         
@@ -42,7 +46,7 @@
     </div>
 </section>
 
-<section id="isi3">
+{{-- <section id="isi3">
     <div class="container">
         <div class="jasa">
             <h1>Percayakan perawatan senior terkasih Anda pada kami</h1>
@@ -52,30 +56,30 @@
             </p>
         </div>
     </div>
-</section>
+</section> --}}
 
-<section id="isi4">
+<section id="seniorliving">
     <div class="container">
         <div class="about-heading">
-            <h2>
-                About Rukun Senior Living
-            </h2>
+            @if(!empty($pengaturantitle['sec4']))
+                    {!!$pengaturantitle['sec4']!!}
+            @endif
         </div>    
         <div class="aboutp col-lg-6">
-            <p>
-            RUKUN Senior Living adalah penyedia jasa hunian dan pelayanan senior terpadu bagi warga senior yang ingin menikmati kenyamanan hidup yang aktif, mandiri, dan produktif. RUKUN menyajikan serangkaian ragam jasa sesuai kebutuhan warga senior, dari layanan di rumah (Home Care), sentra kegiatan (Senior Club dan Dementia Day Program), Maupun hunian untuk gaya hidup yang mandiri hingga berkebutuhan khusus (Senior Living Resort dan RUKUN Senior Care).
-            </p>
+            @if(!empty($pengaturanisi['sec4']))
+                    {!!$pengaturanisi['sec4']!!}
+            @endif
         </div> 
     </div>
 </section>
 
-<section id="isi5">
-    <div class="isi5-container">
+<section id="service">
+    <div class="service-container">
         <div class="row mleft">
             <div class="col-lg-3 pad20 rukun-options">
                 <div class="row ">
                     <div class="list-options">
-                        <h2>Rukun Options</h2>
+                        <h2>Ragam Layanan RUKUN</h2>
                         <a href="">Senior Resort</a>
                         <hr>
                         <a href="">Senior Care</a>
@@ -93,7 +97,8 @@
                         {!!$pengaturanisi['pertanyaan_terkait_homecare']!!}
                     @endif
                     <div class="hubungi">
-                        <a href="tel:+6285888076790" style="font-weight: 600">Hubungi Kami</a>
+                        <a href="whatsapp://send?abid=+6285888076790" style="font-weight: 600" target="_blank">Hubungi Kami</a>
+                        {{-- <a href="tel:+6285888076790" style="font-weight: 600">Hubungi Kami</a> --}}
                     </div>
                     
                 </div>

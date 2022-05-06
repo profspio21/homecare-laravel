@@ -5,16 +5,22 @@
             <img src="../../img/logo.png" alt="Home Care">
           </a>
       </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#seniorliving">Senior Living</a></li>
+          <li><a href="/#service">Service</a></li>
+          <li><a href="/#footer">Contact</a></li>
+          {{-- <li><a href="#5">Partner</a></li> --}}
+          <li><a href="career">Career</a></li>
+        </ul>
+      </nav>
+      <div id="top-wa">
+          
+            <a href="whatsapp://send?abid=+6285888076790"><i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 18px;"></i> 0858 8807 6790</a>
+          
+      </div>
 
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="#sen">Senior Club</a></li>
-            <li><a href="#3">Service</a></li>
-            <li><a href="#4">Contact</a></li>
-            <li><a href="#5">Partner</a></li>
-            <li><a href="career">Career</a></li>
-          </ul>
-        </nav>
+       
     </div>
 </header>

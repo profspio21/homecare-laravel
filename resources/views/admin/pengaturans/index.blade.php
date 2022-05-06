@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('pengaturan_create')
+{{-- @can('pengaturan_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.pengaturans.create') }}">
@@ -8,7 +8,7 @@
             </a>
         </div>
     </div>
-@endcan
+@endcan --}}
 <div class="card">
     <div class="card-header">
         {{ trans('global.list') }} {{ trans('cruds.pengaturan.title_singular') }} 
@@ -61,11 +61,11 @@
                                 {!! $pengaturan->value ?? '' !!}
                             </td>
                             <td>
-                                @can('pengaturan_show')
+                                {{-- @can('pengaturan_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.pengaturans.show', $pengaturan->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
-                                @endcan
+                                @endcan --}}
 
                                 @can('pengaturan_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.pengaturans.edit', $pengaturan->id) }}">
@@ -73,13 +73,13 @@
                                     </a>
                                 @endcan
 
-                                @can('pengaturan_delete')
+                                {{-- @can('pengaturan_delete')
                                     <form action="{{ route('admin.pengaturans.destroy', $pengaturan->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
-                                @endcan
+                                @endcan --}}
 
                             </td>
 

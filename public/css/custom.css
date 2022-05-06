@@ -130,3 +130,8 @@ table.dataTable thead .sorting_desc {
 .custom-select.form-control-sm {
     padding: 0.25rem 1.5rem;
 }
+
+.card h2, .card h1, .card h3 {
+    font-size: 14px !important;
+    font-weight: 400;
+}

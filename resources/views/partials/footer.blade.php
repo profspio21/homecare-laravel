@@ -11,11 +11,17 @@
             </div>
             <div class="col-lg-4x">
                 <div class="row">
-                    <h3>Call</h3>
+                    <h3>Contact</h3>
                 </div>
                 <div class="row">
                     @if (!empty($pengaturanisi['telfon']))
-                        <a href="tel:{{ str_replace(['<p>','</p>', ' '],'', $pengaturanisi['telfon'] ?? '')}}">{!!$pengaturanisi['telfon']!!}</a> 
+                       {!!$pengaturanisi['telfon']!!}
+                    @endif
+                </div>
+                <br>
+                <div class="row">
+                    @if (!empty($pengaturanisi['wa']))
+                    {!!$pengaturanisi['wa']!!}
                     @endif
                 </div>
             </div>
@@ -34,7 +40,7 @@
     <hr style="margin-top: 30px">
     <div class="container bot-footer">
         <div class="company">
-            <p>@2018 RUKUN Senior Living</p>
+            <p style="vertical-align: center"><i class="fa fa-copyright fa-2" aria-hidden="true" style="font-size: 18px"></i>  2022 RUKUN Home Care</p>
         </div>
         <br>
         <div class="social">
