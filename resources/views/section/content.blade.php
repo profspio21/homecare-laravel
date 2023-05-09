@@ -69,7 +69,9 @@
             @if(!empty($pengaturanisi['sec4']))
                     {!!$pengaturanisi['sec4']!!}
             @endif
-        </div> 
+        </div>
+        <br>
+        <a href="https://rukunseniorliving.com" target="_blank">Selengkapnya...</a>
     </div>
 </section>
 
@@ -80,13 +82,13 @@
                 <div class="row ">
                     <div class="list-options">
                         <h2>Ragam Layanan RUKUN</h2>
-                        <a href="">Senior Resort</a>
+                        <a href="https://rukunseniorliving.com/senior-living-rukun/" target="_blank">Senior Resort</a>
                         <hr>
-                        <a href="">Senior Care</a>
+                        <a href="https://rukunseniorliving.com/senior-care/" target="_blank">Senior Care</a>
                         <hr>
-                        <a href="">Senior Club</a>
+                        <a href="https://rukunseniorliving.com/senior-club/" target="_blank">Senior Club</a>
                         <hr>
-                        <a href="">Damentia Day Program</a>
+                        <a href="https://rukunseniorliving.com/dementia-day-program/" target="_blank">Dementia Day Program</a>
                     </div>
                 </div>
                 <div class="row isi-title">
@@ -97,8 +99,8 @@
                         {!!$pengaturanisi['pertanyaan_terkait_homecare']!!}
                     @endif
                     <div class="hubungi">
-                        <a href="whatsapp://send?abid=+6285888076790" style="font-weight: 600" target="_blank">Hubungi Kami</a>
-                        {{-- <a href="tel:+6285888076790" style="font-weight: 600">Hubungi Kami</a> --}}
+                        <a href="https://api.whatsapp.com/send?phone=6285888076790&text=" style="font-weight: 600" target="_blank">Hubungi Kami</a>
+                        
                     </div>
                     
                 </div>

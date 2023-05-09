@@ -1,12 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
+<img src="../img/rukunhomecare1.jpg" alt="Rukun Home Care" width="100%">
     <div class="container">
         <div class="rounded-form" style="padding-bottom: 4rem;">
-          <img src="../img/banner3.jpg" alt="Rukun Home Care" width="100%">
+          
           <div class="job-list">
             
-              <h2>Job Available</h2>
+              <h2>Lowongan</h2>
             
             @foreach ($jobs as $job)
             <div class="card-job">
@@ -22,12 +23,21 @@
                 @endif
               </div>
             </div>
+            <br>
             @endforeach
           </div>
-            <form action="career" id="ft-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+          <div class="apply-now">
+            <h2>Form Lamaran</h2>
+            <div class="row">
+              <a href="https://forms.gle/U9LVMwaKeRRsjXbH8" target="_blank">Klik disini untuk mengisi form lamaran</a>
+              
+            </div><br>
+            <div class="row"><a href="https://bit.ly/joinrukun" target="_blank"><img src="../../img/apply-now.png" alt="apply-now"></a></div>
+          </div>
+            {{-- <form action="career" id="ft-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                 @csrf
                 <fieldset>
-                  <legend>Join Us</legend>
+                  <legend>Form Lamaran</legend>
                   <label>
                     Pekerjaan yang dilamar *
                     
@@ -115,7 +125,8 @@
                   <input type="text" name="_gotcha" value="" style="display:none;">
                   <input type="submit" value="Submit application">
                 </div>
-              </form>
+              </form> --}}
+
         </div>
     </div>
 @endsection

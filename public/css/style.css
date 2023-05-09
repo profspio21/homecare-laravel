@@ -310,7 +310,6 @@ a:hover {
   margin: 0;
 }
 
-
 /* Mobile Nav Toggle */
 
 #mobile-nav-toggle {
@@ -865,7 +864,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 
   #intro .about-btn {
-  font-size: 20px;
+  font-size: 17px;
   }
 }
 
@@ -1006,9 +1005,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-.rounded-form {
+/* .rounded-form {
   padding-top: 6rem
-}
+} */
 
 @keyframes slideUp {
   0% {
@@ -1034,7 +1033,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .card-head h1, .card-head h2, .card-head h3 {
   font-size: 20px;
   font-weight: 700;
-  font-family: cursive;
+  font-family: sans-serif;
 }
 
 .card-isi {

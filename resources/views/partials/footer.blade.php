@@ -27,7 +27,7 @@
             </div>
             <div class="col-lg-4x">
                 <div class="row">
-                    <h3>Address</h3>
+                    <h3>Address</h3>0
                 </div>
                 <div class="row alamat">
                     @if (!empty($pengaturanisi['alamat']))
@@ -44,9 +44,9 @@
         </div>
         <br>
         <div class="social">
-            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a href="" target="_blank"><i class="fa fa-youtube"></i></a>
-            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.facebook.com/RUKUNHomeCare/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/c/OfficialRUKUNSeniorLiving" target="_blank"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.instagram.com/rukun_homecare/" target="_blank"><i class="fa fa-instagram"></i></a>
         </div>
     </div>
 </footer>

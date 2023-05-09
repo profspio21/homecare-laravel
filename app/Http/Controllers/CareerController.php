@@ -21,11 +21,11 @@ class CareerController extends Controller
     {
         $pengaturantitle = Pengaturan::pluck('title','key');
         $pengaturanisi = Pengaturan::pluck('value','key');
-        $genders = Gender::all();
+        
         $jobs = Job::all();
-        $careers = Career::all();
+        
 
-        return view('frontend.career', compact('careers','jobs','genders','pengaturantitle','pengaturanisi'));
+        return view('frontend.career', compact('jobs','pengaturantitle','pengaturanisi'));
     }
 
     public function store(StoreCareerRequest $request)
